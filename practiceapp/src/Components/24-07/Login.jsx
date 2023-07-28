@@ -26,7 +26,7 @@ function Login() {
 
                     alert("Login successfull.");
                     setUserData({ email: "", password: "" })
-                    router('/home');
+                    router('/');
                     break;
                 }
             }

@@ -27,8 +27,9 @@ function Navbar(){
            <div style={{width:'80%', display:'flex',justifyContent:'right',alignItems:'center'}}>
             {user?.email ?
             <>
+            {user?.role == "Seller" && <h3>Add Product</h3>}
             <h3 onClick={() => router('/product-from-backend')} style={{cursor:'pointer'}}>Products</h3>
-            <h3 style={{marginLeft:'30px',cursor:'pointer'}} onClick={() => router("/profile")}>Profile-{user?.name}</h3>
+            {user?.name && <h3 style={{marginLeft:'30px',cursor:'pointer'}} onClick={() => router("/profile")}>Profile-{user?.name}</h3>}
             <h3 onClick={logout} style={{marginLeft:'30px',cursor:'pointer'}}>Logout</h3>
             <h3 onClick={() => router('/cart')} style={{marginLeft:'30px',cursor:'pointer'}}>Cart</h3>
             </>

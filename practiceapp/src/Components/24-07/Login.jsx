@@ -19,6 +19,7 @@ function Login() {
             const users = JSON.parse(localStorage.getItem("Users")); // accessed localstorage
 
             var flag = false;
+            
             for (var i = 0; i < users.length; i++) {
                 if (users[i].email == userData.email && users[i].password == userData.password) {
                     flag = true; // re-assign

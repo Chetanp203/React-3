@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const AddProducts = () => {
 
@@ -18,6 +19,8 @@ const AddProducts = () => {
         if(productData.name && productData.price && productData.image && productData.category){
             const productArray = JSON.parse(localStorage.getItem("Products")) || [];
 
+            const randomId = uuidv4();
+            productData['id'] = randomId;
            
             productArray.push(productData);
             localStorage.setItem("Products", JSON.stringify(productArray));
